@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papilledema and Pseudopapilledema Predcition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+</head>
+<body>
+    <div class = "header">
+        <h1>Papilledema and Pseudopapilledema</h1>
+    </div>
+    <div class="hero">
+        <label for="input-file" id = "drop-area">
+            <input type="file" accept="image/*" id ="input-file" hidden>
+            <div id ="img-view">
+                <img src="{{ url_for('static', filename='images/icon.png') }}" alt="icon">
+                <p>Drag and drop or click here <br> to upload an image</p>
+                <span> Upload Papilledema or Pseudopapilledema image</span>
+            </div>
+        </label>
+    </div>
+    <div class="submit">
+        <button id="btn" onclick="uploadImage()">Predict</button>
+    </div>
+     
+
+    <div id="result"></div> <!-- Container to display the result -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='script/script.js') }}"></script>
+    <script>
+        function uploadImage() {
+            var formData = new FormData();
+            var fileInput = document.getElementById('input-file').files[0];
+            formData.append('image', fileInput);
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerHTML = data.result;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>

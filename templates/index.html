@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papilledema and Pseudopapilledema Predcition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class = "header">
+        <h1>Papilledema and Pseudopapilledema</h1>
+    </div>
+    <div class = "about">
+        <div class ="content">
+        <h2>Papilledema</h2>
+        <ul>
+            <li>Papilledema refers to optic disc swelling that is caused by increased intracranial pressure.  
+                This increased pressure can be due to conditions such as hydrocephalus, brain tumors, intracranial hemorrhage,
+                or idiopathic intracranial hypertension (IIH), formerly known as pseudotumor cerebri.</li>
+            <li>The swelling of the optic disc in papilledema is 
+                typically bilateral and symmetric. It is often associated with visual disturbances, including blurry vision, 
+                decreased visual acuity, and sometimes even vision loss, especially if left untreated.</li>
+            <li>Diagnosis of papilledema is typically made through a comprehensive eye examination, including fundoscopic
+                evaluation of the optic nerve head. Imaging studies such as MRI or CT scans may be performed to identify the underlying cause 
+                of increased intracranial pressure.</li>
+            
+        </ul>
+        <h2>Pseudopapilledema</h2>
+        <ul>
+            <li>Pseudopapilledema refers to optic disc swelling that is not caused by increased intracranial pressure. Instead, it is often due to structural anomalies or
+                other non-pathological conditions.</li>
+            <li>Unlike papilledema, pseudopapilledema typically does not cause visual disturbances or vision loss. It may be an incidental finding during routine eye examination.</li>
+            <li>Common causes of pseudopapilledema include crowded optic nerve heads, drusen (calcifications) on the optic nerve head, optic nerve head draping, or optic nerve head hypoplasia.</li>
+
+        </ul>
+        </div>
+    </div>
+    <div class = "predict">
+        <a href="{{ url_for('predict_page') }}"><button id="btn">Let's Predict</button></a>
+    </div>
+
+</body>
+</html>
